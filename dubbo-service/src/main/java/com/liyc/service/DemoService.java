@@ -1,5 +1,7 @@
 package com.liyc.service;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * DemoService
  * @author liyc
@@ -10,5 +12,5 @@ public interface DemoService {
 	 * @param name
 	 * @return
 	 */
-	String sayHello(String name);
+	String sayHello(@NotNull(message = "name can't be null") String name);
 }

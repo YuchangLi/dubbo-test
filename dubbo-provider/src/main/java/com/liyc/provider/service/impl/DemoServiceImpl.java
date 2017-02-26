@@ -1,5 +1,6 @@
 package com.liyc.provider.service.impl;
 
+
 import org.springframework.stereotype.Service;
 
 import com.liyc.service.DemoService;
@@ -8,8 +9,13 @@ import com.liyc.service.DemoService;
  * DemoService
  * @author liyc
  */
-@Service("demoService")
+@Service
+@com.alibaba.dubbo.config.annotation.Service//(validation="true")
 public class DemoServiceImpl implements DemoService {
+
+	public DemoServiceImpl() {
+		System.out.println("DemoServiceImpl inited!!!");
+	}
 
 	/**
 	 * sayhello
