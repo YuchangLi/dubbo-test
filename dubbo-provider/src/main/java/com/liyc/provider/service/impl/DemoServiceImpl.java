@@ -14,7 +14,7 @@ import com.liyc.service.DemoService;
 public class DemoServiceImpl implements DemoService {
 
 	public DemoServiceImpl() {
-		System.out.println("DemoServiceImpl inited!!!");
+		System.out.println("DemoServiceImpl2 inited!!!");
 	}
 
 	/**
@@ -22,7 +22,7 @@ public class DemoServiceImpl implements DemoService {
 	 */
 	@Override
 	public String sayHello(String name) {
-		System.out.println("in DemoServiceImpl ");
-		return "hello "+name+" : from provide";
+		System.out.println("in DemoServiceImpl2 ");
+		return "hello "+name+" : from provide2";
 	}
 }

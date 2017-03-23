@@ -12,9 +12,9 @@
 	<!-- 使用multicast广播注册中心暴露发现服务地址-->
 	<!--
 	 <dubbo:registry address="zookeeper://localhost:2181" timeout="3000"/>
-	 <dubbo:registry address="zookeeper://123.56.216.146:2181" timeout="3000"/>
+     <dubbo:registry address="redis://123.56.216.146:6379" timeout="10000"/>
 	 -->
-	<dubbo:registry address="redis://123.56.216.146:6379" timeout="10000"/>
+	 <dubbo:registry address="zookeeper://123.56.216.146:2181" timeout="3000"/>
 
 	<!-- 生成远程服务代理，可以和本地bean一样使用demoService 
 	 url="dubbo://localhost:20880" 提货方若<dubbo:registry register="false"/>, 只能直连

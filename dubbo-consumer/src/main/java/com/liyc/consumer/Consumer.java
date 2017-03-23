@@ -22,13 +22,15 @@ public class Consumer {
 
 	public static void main(String[] args) throws Exception {
 		
-		ApplicationContext context =  new AnnotationConfigApplicationContext(Consumer.class);
+		@SuppressWarnings("resource")
+    ApplicationContext context =  new AnnotationConfigApplicationContext(Consumer.class);
 
     BaseController con = (BaseController)context.getBean("baseController"); // 获取远程服务代理
 			try {
-				String hello = con.demoService.sayHello("world"); // 执行远程方法
-//
-				System.out.println( hello ); // 显示调用结果
+				for (int i = 0; i < 10; i++) {
+          String hello = con.demoService.sayHello("world"); // 执行远程方法
+          System.out.println(hello); // 显示调用结果
+        }
 			} catch (RpcException e) {
 				e.printStackTrace();
 				ConstraintViolationException ve = (ConstraintViolationException) e.getCause(); // 里面嵌了一个ConstraintViolationException
